@@ -1,0 +1,98 @@
+
+<h2 class="text-center" style="color: #008442;">
+	<i class="fa fa-plus-square"></i> 
+	Modificar <?=$user_p['user_name'];?>
+</h2>
+
+<hr style="border-bottom: 3px solid #FC6836;margin-bottom: 30px;">
+
+<form action="<?=$GLOBALS['project_index'];?>/controller/update_user.php" method="POST">
+
+<div class="row">
+	<div class="form-group col-md-10">
+		<div class="row">
+
+		<div class="form-group col-md-4" >
+			<label for="">Nome do Usuário: </label><br>
+			<input type="text" placeholder="Nome do Usuário" required class="form-control" name="user_name" value="<?=$user_p['user_name'];?>">
+		</div>
+
+		<div class="form-group col-md-8" >
+			<label for="">Nome Completo: </label><br>
+			<input type="text" placeholder="Nome do Funcionário" required class="form-control" name="user_fullname" value="<?=$user_p['user_fullname'];?>">
+		</div>
+
+		<div class="form-group col-md-4" >
+			<label for="">Senha do Usuário: </label><br>
+			<input type="password" placeholder="Senha do Usuário" class="form-control" name="user_password">
+		</div>
+
+		<div class="form-group col-md-4" >
+			<label for="">CPF do Usuário: </label><br>
+			<input type="text" placeholder="CPF do Usuário" required class="form-control" name="user_cpf" id="cpf" value="<?=$user_p['user_cpf'];?>">
+		</div>
+
+		<div class="form-group col-md-4" >
+			<label for="">RG do Usuário: </label><br>
+			<input type="text" placeholder="RG do Usuário" required class="form-control" name="user_rg" maxlength="14" value="<?=$user_p['user_rg'];?>">
+		</div>
+
+		<div class="form-group col-md-4" >
+			<label for="">Telefone do Usuário: </label><br>
+			<input type="text" placeholder="Telefone do Usuário" required class="form-control" name="user_phone" id="phone" value="<?=$user_p['user_phone'];?>">
+		</div>
+
+		<div class="form-group col-md-4" >
+			<label for="">Celular do Usuário: </label><br>
+			<input type="text" placeholder="Celular do Usuário" required class="form-control" name="user_cellphone" id="cellphone" value="<?=$user_p['user_cellphone'];?>">
+		</div>
+
+		<div class="form-group col-md-8" >
+			<label for="">Endereço do Usuário: </label><br>
+			<input type="text" placeholder="Endereço Completo, Bairro, N°" required class="form-control" name="user_address" value="<?=$user_p['user_address'];?>">
+		</div>
+
+		<div class="form-group col-md-4" >
+			<label for="">Nascimento do Usuário: </label><br>
+			<input type="date" placeholder="Nascimento do Usuário" required class="form-control" name="user_birth" value="<?=$user_p['user_birth'];?>">
+		</div>
+
+		<div class="form-group col-md-4" >
+			<label for="">Perfil do Usuário: </label><br>
+			<select name="profile_id" id="" class="form-control" required>
+				<option selected value="<?=$user_p['profile_id'];?>">
+					Atual - <?=$user_p['profile_name'];?>
+				</option>
+			<?php 			
+				foreach ($profiles as $p) {?>
+					<option value="<?=$p['id_profile'];?>"><?=$p['profile_name'];?></option>
+				<?php } ?>
+			</select>
+		</div>
+
+		<input type="hidden" name="id_user" value="<?=$user_p['id_user'];?>">
+
+		<div class="form-group col-md-8" >
+			<button id="cad_product" class="btn btn-success">
+				<i class="fa fa-plus-square"></i>
+				Atualizar Usuário
+			</button>
+		</div>
+		</div>
+		</div>
+	</div>
+	
+</form>
+
+<script>
+	//Auto Close Timer
+    $('#cad_product').click(function(){
+         swal({   
+            title: "Cadastro de Produtos",   
+            text: "Produto Cadastrado com sucesso.",   
+            timer: 2000,   
+            showConfirmButton: false 
+        });
+    });
+</script>
+

@@ -1,0 +1,65 @@
+
+<h2 class="text-center" style="color: #008442;"><i class="fa fa-plus-square"></i> Cadastro de Empregados</h2>
+<hr style="border-bottom: 3px solid #FC6836">
+
+<form action="<?=$GLOBALS['project_index'];?>/controller/add_employee.php" method="POST">
+
+<div class="row">
+	<div class="form-group col-md-4" >
+		<label for="">Cargo: </label><br>
+		<input type="text" placeholder="Cargo na empresa" required class="form-control" name="employee_function">
+	</div>
+
+	<div class="form-group col-md-4" >
+		<label for="">Estado: </label><br>
+		<input type="text" placeholder="Estado empregatício" class="form-control" name="employee_state">
+	</div>
+</div>
+
+<div class="row">
+	<div class="form-group col-md-4" >
+		<label for="">Data de admissão: </label><br>
+		<input type="date" placeholder="Data de admissão" required class="form-control" name="employee_hiring_date">
+	</div>
+
+	<div class="form-group col-md-4" >
+		<label for="">Fim do contrato: </label><br>
+		<input type="date" placeholder="Fim de contrato" class="form-control" name="employee_dismissal_date">
+	</div>
+</div>
+
+<div class="row">
+	<div class="form-group col-md-4" >
+		<label for="">Comissão: </label><br>
+		<input type="number" placeholder="Comissão mensal" class="form-control" name="employee_commission">
+	</div>
+
+	<div class="form-group col-md-4" >
+		<label for="">Salário: </label><br>
+		<input type="number" placeholder="Salário bruto" required class="form-control" name="employee_salary">
+	</div>
+
+	<div class="form-group col-md-4" >
+		<label for="">Departamento: </label><br>
+		<input type="text" placeholder="Departamento" required class="form-control" name="employee_department">
+	</div>
+
+	<div class="form-group col-md-3" >
+		<label for="">Nº da Conta bancária: </label><br>
+		<input type="text" placeholder="Conta bancária" required class="form-control" name="bank_account">
+	</div>
+
+	<div class="form-group col-md-4" >
+		<label for="">Observações sobre o empregado: </label><br>
+		<input type="text" maxlength="225" placeholder="Detalhes sobre o empregado" class="form-control" name="employee_observations">
+	</div>
+	
+	<div class="form-group col-md-8" >
+		<button id="cad_product" class="btn btn-success">
+			<i class="fa fa-plus-square"></i>
+			Inserir Empregado
+		</button>
+	</div>
+</div>
+	
+</form>

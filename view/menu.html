@@ -1,0 +1,63 @@
+<ul class="list-unstyled components">
+<?php if($user->profile_page == "admin.php"){ ?>
+    <li>
+        <a href="?option=admin_painel">
+            <i class="fa fa-home"></i> Painel Administrativo 
+        </a>
+    </li>
+
+    <li>
+        <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fa fa-users"></i>
+            Usuários
+        </a>
+        <ul class="collapse list-unstyled" id="homeSubmenu1">
+            <li>
+                <a href="?option=list_users"><i class="fa fa-bars"></i> Listar Usuários</a>
+            </li>
+            
+            <li>
+                <a href="?option=add_user">
+                    <i class="fa fa-plus-square"></i>Adicionar Usuário</a>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fa fa-address-card"></i>
+            Empregados
+        </a>
+        <ul class="collapse list-unstyled" id="homeSubmenu2">
+            <li>
+                <a href="?option=list_employees"><i class="fa fa-bars"></i>Listar Empregados</a>
+            </li>
+            
+            <li>
+                <a href="?option=add_employee"><i class="fa fa-plus-square"></i>Adicionar Empregado</a>
+            </li>
+        </ul>
+    </li>
+
+<?php }else { ?>
+    
+    <li>
+        <a href="?option=employee_painel">
+            <i class="fas fa-id-card-alt"></i> Dados do Empregado 
+        </a>
+    </li>
+
+<?php } ?>
+    
+    <li>
+        <a href="?option=suport">
+            <i class="fa fa-comment"></i> Suporte 
+        </a>
+    </li>
+
+    <li>
+        <a href="<?=$project_index;?>/controller/logout.php">
+            <i class="fa fa-power-off"></i> Sair 
+        </a>
+    </li>
+</ul>
