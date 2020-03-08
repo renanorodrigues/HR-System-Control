@@ -8,13 +8,9 @@
 	# receber os dados do formulario
 	$data = $_POST;
 
-	# Formatando os campos necessários
-	$data['user_password'] = do_password($data['user_password']);
-	#$data['user_birth'] = do_date($data['user_birth']);
-
 	# Criar o objeto do tipo manager
 	$manager = new Manager;
-	$manager->insert_common("users",$data,NULL);
+	$manager->insert_common("employees",$data,NULL);
 
 	# Redirecionamento
 	header("location: $project_index/".$user->profile_page."?option=list_users&success=insert_success");

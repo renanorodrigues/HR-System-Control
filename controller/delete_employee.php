@@ -4,7 +4,8 @@
 	do_includes();	
 	do_session();
 
-	$filter['id_user'] = $_POST['filter'];
+	$filter = [];
+	$filter = ["id_user" => $_POST['id_user'],"id_employee" => $_POST['id_employee']];
 
 	$manager = new Manager;
 
