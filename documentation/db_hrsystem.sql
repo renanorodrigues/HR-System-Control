@@ -61,13 +61,29 @@ CREATE TABLE `users` (
   `profile_id` int(4) UNSIGNED ZEROFILL NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `employees`
+--
+
+CREATE TABLE `employees` (
+  `id_employee` int(3) UNSIGNED ZEROFILL NOT NULL,
+  `employee_occupation` varchar(255) DEFAULT NULL,
+  `employee_salary` varchar(255) DEFAULT NULL,
+  `employee_hire_date` date,
+  `employee_fired_date` date DEFAULT NULL,
+  `user_id` int(3) UNSIGNED ZEROFILL NOT NULL,
+  `profile_id` int(4) UNSIGNED ZEROFILL NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Extraindo dados da tabela `users`
 --
 
 INSERT INTO `users` (`id_user`, `user_name`, `user_fullname`, `user_password`, `user_cpf`, `user_rg`, `user_phone`, `user_cellphone`, `user_address`, `user_birth`, `profile_id`) VALUES
-(001, 'Evaldo', 'Evaldo Parente Filho', '$2y$10$30qGVDHQaQ6lYZLDaTVvz.F75vzvGakaf4v8i5Q9BkI.gT1/s2PYO', '655.451.547-78', '5004765057-8', '8532722488', '85989514553', NULL, '1954-06-26', 0001),
-(003, 'Rafaela', 'Rafaela dos Santos Chagas', '$2y$10$j/4LujW9eFfL0HF6CumiIOFt/3FAJNfORRD8rhigc4iJZyC.FbeLm', '646.781.445-12', '54965511541511', '(85) 3114-5451', '(85) 96154-5151', 'Avenida Imperador de Santana, 988', '1978-07-28', 0002);
+(001, 'Evaldo', 'Evaldo Parente Filho', '$2y$10$dC9UpMJheXR/yU4duYzXv.JkNnq.IrLl08xyT3itBHe5z6kWowsPi', '655.451.547-78', '5004765057-8', '8532722488', '85989514553', NULL, '1954-06-26', 0001),
+(002, 'Rafaela', 'Rafaela dos Santos Chagas', '$2y$10$j7zjyhfMrQpZ5xwLlYVEOulDTEspNW8c.f5MIZQEbsq9cqceKZHQG', '646.781.445-12', '54965511541511', '(85) 3114-5451', '(85) 96154-5151', 'Avenida Imperador de Santana, 988', '1978-07-28', 0002);
 
 --
 -- Indexes for dumped tables
@@ -87,6 +103,13 @@ ALTER TABLE `users`
   ADD KEY `profile_id` (`profile_id`);
 
 --
+-- Indexes for table `employees`
+--
+ALTER TABLE `employees`
+  ADD PRIMARY KEY (`id_employee`),
+  ADD KEY `id_employee` (`id_employee`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -104,6 +127,13 @@ ALTER TABLE `users`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`profile_id`) REFERENCES `profiles` (`id_profile`);
+
+--
+-- Limitadores para a tabela `employees`
+--
+ALTER TABLE `employees`
+  ADD CONSTRAINT `employees_ibfk_1` FOREIGN KEY (`profile_id`) REFERENCES `profiles` (`id_profile`);
+  ADD CONSTRAINT `employees_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `profiles` (`id_user`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
